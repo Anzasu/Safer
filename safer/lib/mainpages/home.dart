@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safer/design_constraints/color.dart';
+import 'package:safer/mainpages/callContact.dart';
+import 'package:safer/mainpages/emergencyCall.dart';
 import 'package:safer/mainpages/sendLocation.dart';
 import 'package:safer/mainpages/settings.dart';
 
@@ -34,23 +36,30 @@ class MyHomePage extends StatelessWidget {
             SizedBox(height: 30),
             Text(
               "Make sure your GPS is enabled.",
-              style: TextStyle(fontSize: 30.0, color: textOnDark),
+              style: TextStyle(fontSize: 30.0, color: icons),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 55,
+            SizedBox(height: 10),
+            Text(
+              "Please set up the numbers in the settings.",
+              style: TextStyle(fontSize: 25.0, color: highlight),
+              textAlign: TextAlign.center,
             ),
+            SizedBox(height: 45),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EmergencyCall()),
+                );
+              },
               icon: Icon(Icons.phone_forwarded, size: 55.0, color: icons),
               label: Text("Emergency Call",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(250, 100)),
             ),
-            SizedBox(
-              height: 70,
-            ),
+            SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
@@ -65,11 +74,14 @@ class MyHomePage extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(250, 100)),
             ),
-            SizedBox(
-              height: 70,
-            ),
+            SizedBox(height: 50),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CallContact()),
+                );
+              },
               icon: Icon(Icons.quick_contacts_dialer_rounded,
                   size: 55.0, color: icons),
               label: Text("Call Contact",
