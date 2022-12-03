@@ -50,82 +50,83 @@ class Editor2State extends State<Editor2> {
         ],
       ),
       body: Center(
-        child: Column(children: [
-          SizedBox(height: 70),
-          Text(
-            "Contact 2",
-            style: TextStyle(fontSize: 40.0, color: title),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 130),
-          SizedBox(
-            width: 350,
-            child: TextFormField(
-              controller: TextEditingController(),
-              onChanged: (String? value) {
-                if (value != null) {
-                  name = value;
-                }
-              },
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: buttons,
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10)),
-                  hintStyle: TextStyle(color: textOnLight, fontSize: 19.0),
-                  hintText: "Current Name: " + contact2.name),
-              maxLength: 30,
-              maxLines: 1,
-              cursorColor: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(children: [
+            Text(
+              "Contact 2",
+              style: TextStyle(fontSize: 40.0, color: title),
+              textAlign: TextAlign.center,
             ),
-          ),
-          SizedBox(height: 50),
-          SizedBox(
-            width: 350,
-            child: TextFormField(
-              controller: TextEditingController(),
-              onChanged: (String? value) {
-                if (value != null) {
-                  number = value;
-                }
-              },
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                  filled: true,
-                  fillColor: buttons,
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10)),
-                  hintStyle: TextStyle(color: textOnLight, fontSize: 19.0),
-                  hintText: "Current Number: " + contact2.number),
-              maxLength: 30,
-              maxLines: 1,
-              cursorColor: Colors.white,
-              keyboardType: TextInputType.phone,
-            ),
-          ),
-          SizedBox(height: 50),
-          ElevatedButton.icon(
-              onPressed: () {
-                if (name != null || name != "") {
-                  contact2.setName(name);
-                }
-
-                if (number != null || number != "") {
-                  contact2.setNumber(number);
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(180, 70)),
-              icon: Icon(
-                Icons.save,
-                color: highlight,
+            SizedBox(height: 100),
+            SizedBox(
+              width: 350,
+              child: TextFormField(
+                controller: TextEditingController(),
+                onChanged: (String? value) {
+                  if (value != null) {
+                    name = value;
+                  }
+                },
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: buttons,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10)),
+                    hintStyle: TextStyle(color: textOnLight, fontSize: 19.0),
+                    hintText: "Current Name: " + contact2.name),
+                maxLength: 30,
+                maxLines: 1,
+                cursorColor: Colors.white,
               ),
-              label: Text("Save Contact",
-                  style: TextStyle(color: highlight, fontSize: 19.0)))
-        ]),
+            ),
+            SizedBox(height: 50),
+            SizedBox(
+              width: 350,
+              child: TextFormField(
+                controller: TextEditingController(),
+                onChanged: (String? value) {
+                  if (value != null) {
+                    number = value;
+                  }
+                },
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: buttons,
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10)),
+                    hintStyle: TextStyle(color: textOnLight, fontSize: 19.0),
+                    hintText: "Current Number: " + contact2.number),
+                maxLength: 30,
+                maxLines: 1,
+                cursorColor: Colors.white,
+                keyboardType: TextInputType.phone,
+              ),
+            ),
+            SizedBox(height: 50),
+            ElevatedButton.icon(
+                onPressed: () {
+                  if (name != null || name != "") {
+                    contact2.setName(name);
+                  }
+
+                  if (number != null || number != "") {
+                    contact2.setNumber(number);
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: buttons, fixedSize: Size(180, 70)),
+                icon: Icon(
+                  Icons.save,
+                  color: highlight,
+                ),
+                label: Text("Save Contact",
+                    style: TextStyle(color: highlight, fontSize: 19.0)))
+          ]),
+        ),
       ),
     );
   }
