@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
 
-String police = "";
-String firedepartment = "";
-String ambulance = "";
+class Police {
+  String number = "";
 
-void setPoliceNumber(String number) {
-  police = number;
+  void setNumber(String number) {
+    number = number;
+  }
 }
 
-void setFiredepartmentNumber(String number) {
-  firedepartment = number;
+class Firedepartment {
+  String number = "";
+
+  void setNumber(String number) {
+    number = number;
+  }
 }
 
-void setAmbulanceNumber(String number) {
-  ambulance = number;
+class Ambulance {
+  String number = "";
+
+  void setNumber(String number) {
+    number = number;
+  }
 }
+
+Police police = new Police();
+Firedepartment fire = new Firedepartment();
+Ambulance ambulance = new Ambulance();

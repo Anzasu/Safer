@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safer/design_constraints/color.dart';
+import 'package:safer/editorpages/editEmergencyNumbers.dart';
 import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/manageContacts.dart';
 
@@ -47,7 +48,12 @@ class Settings extends StatelessWidget {
             ),
             SizedBox(height: 85),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => EditorEmergency()),
+                );
+              },
               icon: Icon(Icons.add_call, size: 55.0, color: icons),
               label: Text(
                 "Manage Emergency Numbers",
