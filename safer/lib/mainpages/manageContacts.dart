@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:safer/backend/contacts.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/editorpages/editContact1.dart';
+import 'package:safer/editorpages/editContact2.dart';
+import 'package:safer/editorpages/editContact3.dart';
+import 'package:safer/editorpages/editContact4.dart';
 import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/settings.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
@@ -74,7 +77,12 @@ class ContactmanagerState extends State<Contactmanager> {
             ),
             SizedBox(height: 50),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Editor2()),
+                );
+              },
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact2.name,
@@ -85,7 +93,12 @@ class ContactmanagerState extends State<Contactmanager> {
             ),
             SizedBox(height: 50),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Editor3()),
+                );
+              },
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact3.name,
@@ -96,7 +109,12 @@ class ContactmanagerState extends State<Contactmanager> {
             ),
             SizedBox(height: 50),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Editor4()),
+                );
+              },
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact4.name,

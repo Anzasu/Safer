@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safer/design_constraints/color.dart';
+import 'package:safer/mainpages/sendLocation.dart';
 import 'package:safer/mainpages/settings.dart';
 
 class MyHomePage extends StatelessWidget {
@@ -51,7 +52,12 @@ class MyHomePage extends StatelessWidget {
               height: 70,
             ),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SendLocation()),
+                );
+              },
               icon: Icon(Icons.emergency_share_outlined,
                   size: 55.0, color: icons),
               label: Text("Send Location",

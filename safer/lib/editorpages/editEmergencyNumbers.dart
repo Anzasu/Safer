@@ -55,7 +55,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
         children: [
           SizedBox(height: 70),
           Text(
-            "Contact 2",
+            "Manage Emergency Numbers",
             style: TextStyle(fontSize: 40.0, color: title),
             textAlign: TextAlign.center,
           ),
