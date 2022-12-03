@@ -86,7 +86,7 @@ class ContactmanagerState extends State<Contactmanager> {
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact2.name,
-                style: TextStyle(fontSize: 25.0, color: textOnLight),
+                style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(250, 100)),
@@ -102,7 +102,7 @@ class ContactmanagerState extends State<Contactmanager> {
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact3.name,
-                style: TextStyle(fontSize: 25.0, color: textOnLight),
+                style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(250, 100)),
@@ -118,7 +118,7 @@ class ContactmanagerState extends State<Contactmanager> {
               icon: Icon(Icons.edit, size: 55.0, color: icons),
               label: Text(
                 contact4.name,
-                style: TextStyle(fontSize: 25.0, color: textOnLight),
+                style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(250, 100)),
