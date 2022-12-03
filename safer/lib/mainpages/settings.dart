@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
+import 'package:safer/mainpages/manageContacts.dart';
 
 class Settings extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class Settings extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: buttons,
         foregroundColor: icons,
-        child: Icon(
+        child: const Icon(
           Icons.home,
           size: 35.0,
         ),
@@ -32,7 +33,12 @@ class Settings extends StatelessWidget {
             ),
             SizedBox(height: 150),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Contactmanager()),
+                );
+              },
               icon: Icon(Icons.group_add_outlined, size: 55.0, color: icons),
               label: Text("Manage Contacts",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
