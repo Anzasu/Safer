@@ -153,8 +153,16 @@ class SendLocationState extends State<SendLocation> {
             ),
             SizedBox(height: 100),
             ElevatedButton.icon(
+              icon: Icon(Icons.send_rounded, size: 55.0, color: icons),
+              label: Text("Send",
+                  style: TextStyle(fontSize: 35.0, color: textOnLight)),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: buttons, fixedSize: Size(200, 100)),
               onPressed: () {
-                bool success = false;
+                final SmsSendStatusListener listener = (SendStatus status) {};
+                final Telephony telephony = Telephony.instance;
+                bool success =
+                    sendToUsedContacts(listener, usedNumbers, telephony);
                 // Code for sending the sms here [...]
                 // ignore: dead_code
                 if (success) {
@@ -182,15 +190,21 @@ class SendLocationState extends State<SendLocation> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
               },
-              icon: Icon(Icons.send_rounded, size: 55.0, color: icons),
-              label: Text("Send",
-                  style: TextStyle(fontSize: 35.0, color: textOnLight)),
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(200, 100)),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+bool sendToUsedContacts(SmsSendStatusListener listener,
+    List<Contact> usedNumbers, Telephony telephony) {
+  for (Contact contact in usedNumbers) {
+    telephony.sendSms(
+        to: contact.number,
+        message: "I don't feel very safe. My current position is [...]",
+        statusListener: listener);
+  }
+  return false;
 }
