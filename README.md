@@ -20,28 +20,27 @@ If you choose to send your location, you have the option to send your coordinate
 1. not everyone always has access to the internet when they are away from home and.
 2. not everyone uses the same messenger. But everyone already has the SMS messenger built in.
 
-# Design
+#Design
 Before I started with the implementation, I first planned the UI.
 
+Since this is a project for the track social justice, I had to make sure that as many people as possible are able to use the app comfortably
 In general, I kept the design very simple. This ensures that the user, even in stressful situations, quickly finds the right function and is not confused by complicated design.
 
 I will also attach some photos of the planning so that it conveys the idea better.
+The app logo was created with the Stable Diffusion AI.
 
-### Color palette
+##Color palette
 I chose a warm dark green as the color base and and created a palette through lighter gradations. 
 Green is considered calming. For an app that is probably only opened in stressful situations, gaudy colors like red and yellow would only be counterproductive.
 
 To make other elements stand out from the background, I intentionally did not include other colors in the palette, but only used gradations of the chosen green. This way, even color-blind people can handle the app well, since the design is based more on contrast, than on color.
 
-### Buttons, text, icons, etc.
+## Buttons, text, icons, etc.
 
 To ensure that older people, people with poor eyesight and illiterate people can also benefit from the app, I have tried to use as little text as possible. Icons were used for this purpose. The remaining text was written relatively large and in a plain font.
 
 # Implementation
 For the implementation I used the language dart and the framework flutter.
-
-The link to the implementation can be found attached or here:
-[link](https://github.com/Anzasu/Safer)
 
 While programming, I often had to change the initial design, because it makes my code unnecessarily more complicated, but not more efficient, or because I don't know how to implement it with my current knowledge.
 
@@ -50,14 +49,30 @@ The first challenge was to get into the world of app programming and to learn fl
 I have never programmed an app before, so I had to learn it especially for this hackathon.
 However, already having advanced experience in OOP and Java helped me a lot.
 
-[...]
+Forced by lack of time and some problems with importing packages into flutter, I was not able to implement the function to call and send SMS. When clicking on the corresponding buttons, it is not possible to make a call or send the location.
+Instead, a snack bar appears with a corresponding error message.
 
 # Accomplishments that I'm proud of
-[...]
+I am pleased that I was able to programme a relatively functional app in such a short time.
 
-# What we learned
+#What we learned
 Especially how apps are programmed with Flutter, but also a lot about app design and the many aspects that have to be considered (colour, font style, font size, etc.).
 
 # What's next for Safer
+I will search for a solution to make the app fully work.
+To make the app usable for the open public, the storage of contacts and numbers must be adjusted so that they do not have to be re-entered every time the app is reopened (e.g. with databases)
 I will continue to practise with Flutter and expand or improve the app functions with the new knowledge.
-For example, I will find a more efficient way to save the contact details or send the location.
+
+## Photos
+![icon_safer](https://user-images.githubusercontent.com/109875028/205458295-5ac5810d-a513-4d29-9dc9-b0bcf4d06e02.png)
+![Hompage_initial](https://user-images.githubusercontent.com/109875028/205458312-ab8151ff-1ba9-4f55-89d8-3cd7589581e7.JPG)
+![Emergency_Call_initial](https://user-images.githubusercontent.com/109875028/205458332-47d15936-6a62-4630-a0bb-89e97df5b4e9.JPG)
+![Call_Contact_initial](https://user-images.githubusercontent.com/109875028/205458341-3ebd0375-ab35-4e54-bb90-af4eccc9f9c9.JPG)
+![Settings_initial](https://user-images.git![Edit_Contact_initial](https://user-images.githubusercontent.com/109875028/205458350-33ca2e95-d825-4d8a-a002-cd37b8671b08.JPG)
+hubusercontent.com/109875028![Edit_Emergency_initial](https://user-images.githubusercontent.com/109875028/205458352-30d514c1-6c9b-47b8-9d17-90815fa64a4b.JPG)
+/205458325-a9141f56-0b42-4875-9644-e45a26b0245d.JPG)
+
+
+
+
+
