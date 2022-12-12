@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:safer/backend/contacts.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
@@ -60,18 +61,22 @@ class CallContactState extends State<CallContact> {
             SizedBox(height: 60),
             ElevatedButton.icon(
               onPressed: () {
-                final snackBar = SnackBar(
-                  content: const Text(
-                    "Not able to call",
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                  backgroundColor: (background),
-                  action: SnackBarAction(
-                    label: "dismiss",
-                    onPressed: () {},
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                bool called = false;
+                callContact(contact1.number, called);
+                if (!called) {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                      "Not able to call",
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    backgroundColor: (background),
+                    action: SnackBarAction(
+                      label: "dismiss",
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
               },
               icon: Icon(Icons.call, size: 55.0, color: icons),
               label: Text(contact1.name,
@@ -82,18 +87,22 @@ class CallContactState extends State<CallContact> {
             SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
-                final snackBar = SnackBar(
-                  content: const Text(
-                    "Not able to call",
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                  backgroundColor: (background),
-                  action: SnackBarAction(
-                    label: "dismiss",
-                    onPressed: () {},
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                bool called = false;
+                callContact(contact2.number, called);
+                if (!called) {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                      "Not able to call",
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    backgroundColor: (background),
+                    action: SnackBarAction(
+                      label: "dismiss",
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
               },
               icon: Icon(Icons.call, size: 55.0, color: icons),
               label: Text(
@@ -106,18 +115,23 @@ class CallContactState extends State<CallContact> {
             SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
-                final snackBar = SnackBar(
-                  content: const Text(
-                    "Not able to call",
-                    style: TextStyle(fontSize: 20.0),
-                  ),
-                  backgroundColor: (background),
-                  action: SnackBarAction(
-                    label: "dismiss",
-                    onPressed: () {},
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                bool called = false;
+                callContact(contact3.number, called);
+
+                if (!called) {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                      "Not able to call",
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    backgroundColor: (background),
+                    action: SnackBarAction(
+                      label: "dismiss",
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
               },
               icon: Icon(Icons.call, size: 55.0, color: icons),
               label: Text(
@@ -129,7 +143,24 @@ class CallContactState extends State<CallContact> {
             ),
             SizedBox(height: 50),
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                bool called = false;
+                callContact(contact4.number, called);
+                if (!called) {
+                  final snackBar = SnackBar(
+                    content: const Text(
+                      "Not able to call",
+                      style: TextStyle(fontSize: 20.0),
+                    ),
+                    backgroundColor: (background),
+                    action: SnackBarAction(
+                      label: "dismiss",
+                      onPressed: () {},
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                }
+              },
               icon: Icon(Icons.call, size: 55.0, color: icons),
               label: Text(
                 contact4.name,
@@ -143,4 +174,9 @@ class CallContactState extends State<CallContact> {
       ),
     );
   }
+}
+
+callContact(String number, bool called) async {
+  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+  called = res!;
 }

@@ -39,6 +39,7 @@ dependencies:
   simple_speed_dial: ^0.1.7
   flutter_sms: ^2.3.3
   geolocator: ^9.0.2
+  flutter_phone_direct_caller: ^2.1.1
   
 dev_dependencies:
   flutter_test:
