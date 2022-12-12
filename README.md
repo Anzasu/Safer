@@ -1,4 +1,3 @@
-This project was submited to the Lunarhacks-Hackathon 2022
 # Inspiration
 The crime rate is still very high nowadays. Kidnappings, rapes, robberies, molestations, ...
 Children and women, who often travel alone, are particularly often affected.
