@@ -48,19 +48,14 @@ The first challenge was to get into the world of app programming and to learn fl
 I have never programmed an app before, so I had to learn it especially for this hackathon.
 However, already having advanced experience in OOP and Java helped me a lot.
 
-Forced by lack of time and some problems with importing packages into flutter, I was not able to implement the function to call and send SMS. When clicking on the corresponding buttons, it is not possible to make a call or send the location.
+Forced some problems with importing packages into flutter, I was not able to implement the function to call and send SMS (SOLVED). When clicking on the corresponding buttons, it is not possible to make a call or send the location (SOLVED).
 Instead, a snack bar appears with a corresponding error message.
-
-# Accomplishments that I'm proud of
-I am pleased that I was able to programme a relatively functional app in such a short time.
 
 #What we learned
 Especially how apps are programmed with Flutter, but also a lot about app design and the many aspects that have to be considered (colour, font style, font size, etc.).
 
 # What's next for Safer
-I will search for a solution to make the app fully work.
-To make the app usable for the open public, the storage of contacts and numbers must be adjusted so that they do not have to be re-entered every time the app is reopened (e.g. with databases)
-I will continue to practise with Flutter and expand or improve the app functions with the new knowledge.
+After implementing the method to save the contact data locally and adding the final touches, the app will hopefully enter the testing phase. With the help of the testers' feedback, possible bugs will be eliminated and the app will be made public for everyone.
 
 ## Photos
 ![icon_safer](https://user-images.githubusercontent.com/109875028/205458295-5ac5810d-a513-4d29-9dc9-b0bcf4d06e02.png)
