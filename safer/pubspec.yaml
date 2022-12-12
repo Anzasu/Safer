@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   simple_speed_dial: ^0.1.7
   flutter_sms: ^2.3.3
+  geolocator: ^9.0.2
   
 dev_dependencies:
   flutter_test:

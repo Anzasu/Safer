@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sms/flutter_sms.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:safer/backend/contacts.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
@@ -164,22 +165,41 @@ class SendLocationState extends State<SendLocation> {
                   backgroundColor: buttons, fixedSize: Size(200, 100)),
               onPressed: () {
                 bool success = false;
-                sendMessage(usedNumbers, success);
+                bool gotIt = false;
+                String coordinates = "";
+                getCoordinates(gotIt, coordinates);
                 // ignore: dead_code
-                if (success) {
-                  final snackBar = SnackBar(
-                    content: Text("Sucessfully sent"),
-                    backgroundColor: (background),
-                    action: SnackBarAction(
-                      label: "dismiss",
-                      onPressed: () {},
-                    ),
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                if (gotIt) {
+                  sendMessage(usedNumbers, success, coordinates);
+                  // ignore: dead_code
+                  if (success) {
+                    final snackBar = SnackBar(
+                      content: Text("Sucessfully sent"),
+                      backgroundColor: (background),
+                      action: SnackBarAction(
+                        label: "dismiss",
+                        onPressed: () {},
+                      ),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  } else {
+                    final snackBar = SnackBar(
+                      content: const Text(
+                        "The messages could not be sent correctly. Please check the saved numbers and try again",
+                        style: TextStyle(fontSize: 20.0),
+                      ),
+                      backgroundColor: (background),
+                      action: SnackBarAction(
+                        label: "dismiss",
+                        onPressed: () {},
+                      ),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  }
                 } else {
                   final snackBar = SnackBar(
                     content: const Text(
-                      "Not sent! Please make sure all numbers are correct.",
+                      "Not able to get your location. Please check your GPS and try again",
                       style: TextStyle(fontSize: 20.0),
                     ),
                     backgroundColor: (background),
@@ -199,10 +219,27 @@ class SendLocationState extends State<SendLocation> {
   }
 }
 
-void sendMessage(List<String> recipients, bool success) async {
+void getCoordinates(bool gotIt, String coordinates) async {
+  Position currentPosition;
+  String latitude = "";
+  String longitude = "";
+  try {
+    currentPosition = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    gotIt = true;
+    latitude = currentPosition.altitude as String;
+    longitude = currentPosition.longitude as String;
+    // ignore: prefer_interpolation_to_compose_strings
+    coordinates = "Latitude: " + latitude + "  Longitude: " + longitude;
+  } catch (error) {
+    print(error);
+  }
+}
+
+void sendMessage(
+    List<String> recipients, bool success, String coordinates) async {
   String message =
-      "Hey! I don't feel really safe right now. These are my current koordinates:" +
-          "[Koordinates]";
+      "Hey! I don't feel really safe right now. These are my current coordinates:$coordinates";
   try {
     await sendSMS(message: message, recipients: recipients);
     success = true;
