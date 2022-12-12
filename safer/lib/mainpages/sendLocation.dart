@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 import 'package:safer/backend/contacts.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
-import 'package:telephony/telephony.dart';
 
 class SendLocation extends StatefulWidget {
   @override
@@ -10,7 +10,7 @@ class SendLocation extends StatefulWidget {
 }
 
 class SendLocationState extends State<SendLocation> {
-  List<Contact> usedNumbers = <Contact>[];
+  List<String> usedNumbers = <String>[];
   bool value1 = false;
   bool value2 = false;
   bool value3 = false;
@@ -60,11 +60,12 @@ class SendLocationState extends State<SendLocation> {
                 onChanged: (bool? value) {
                   setState(() {
                     value1 = value!;
-                    if (value1 == true && !usedNumbers.contains(contact1)) {
-                      usedNumbers.add(contact1);
+                    if (value1 == true &&
+                        !usedNumbers.contains(contact1.number)) {
+                      usedNumbers.add(contact1.number);
                     } else if (value1 == false &&
-                        usedNumbers.contains(contact1)) {
-                      usedNumbers.remove(contact1);
+                        usedNumbers.contains(contact1.number)) {
+                      usedNumbers.remove(contact1.number);
                     }
                   });
                 },
@@ -87,11 +88,12 @@ class SendLocationState extends State<SendLocation> {
                 onChanged: (bool? value) {
                   setState(() {
                     value2 = value!;
-                    if (value2 == true && !usedNumbers.contains(contact2)) {
-                      usedNumbers.add(contact2);
+                    if (value2 == true &&
+                        !usedNumbers.contains(contact2.number)) {
+                      usedNumbers.add(contact2.number);
                     } else if (value2 == false &&
-                        usedNumbers.contains(contact2)) {
-                      usedNumbers.remove(contact2);
+                        usedNumbers.contains(contact2.number)) {
+                      usedNumbers.remove(contact2.number);
                     }
                   });
                 },
@@ -114,11 +116,12 @@ class SendLocationState extends State<SendLocation> {
                 onChanged: (bool? value) {
                   setState(() {
                     value3 = value!;
-                    if (value3 == true && !usedNumbers.contains(contact3)) {
-                      usedNumbers.add(contact3);
+                    if (value3 == true &&
+                        !usedNumbers.contains(contact3.number)) {
+                      usedNumbers.add(contact3.number);
                     } else if (value2 == false &&
-                        usedNumbers.contains(contact3)) {
-                      usedNumbers.remove(contact3);
+                        usedNumbers.contains(contact3.number)) {
+                      usedNumbers.remove(contact3.number);
                     }
                   });
                 },
@@ -141,11 +144,12 @@ class SendLocationState extends State<SendLocation> {
                 onChanged: (bool? value) {
                   setState(() {
                     value4 = value!;
-                    if (value4 == true && !usedNumbers.contains(contact4)) {
-                      usedNumbers.add(contact4);
+                    if (value4 == true &&
+                        !usedNumbers.contains(contact4.number)) {
+                      usedNumbers.add(contact4.number);
                     } else if (value4 == false &&
-                        usedNumbers.contains(contact2)) {
-                      usedNumbers.remove(contact4);
+                        usedNumbers.contains(contact4.number)) {
+                      usedNumbers.remove(contact4.number);
                     }
                   });
                 },
@@ -159,11 +163,8 @@ class SendLocationState extends State<SendLocation> {
               style: ElevatedButton.styleFrom(
                   backgroundColor: buttons, fixedSize: Size(200, 100)),
               onPressed: () {
-                final SmsSendStatusListener listener = (SendStatus status) {};
-                final Telephony telephony = Telephony.instance;
-                bool success =
-                    sendToUsedContacts(listener, usedNumbers, telephony);
-                // Code for sending the sms here [...]
+                bool success = false;
+                sendMessage(usedNumbers, success);
                 // ignore: dead_code
                 if (success) {
                   final snackBar = SnackBar(
@@ -198,13 +199,14 @@ class SendLocationState extends State<SendLocation> {
   }
 }
 
-bool sendToUsedContacts(SmsSendStatusListener listener,
-    List<Contact> usedNumbers, Telephony telephony) {
-  for (Contact contact in usedNumbers) {
-    telephony.sendSms(
-        to: contact.number,
-        message: "I don't feel very safe. My current position is [...]",
-        statusListener: listener);
+void sendMessage(List<String> recipients, bool success) async {
+  String message =
+      "Hey! I don't feel really safe right now. These are my current koordinates:" +
+          "[Koordinates]";
+  try {
+    await sendSMS(message: message, recipients: recipients);
+    success = true;
+  } catch (error) {
+    print(error);
   }
-  return false;
 }
