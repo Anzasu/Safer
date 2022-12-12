@@ -62,7 +62,6 @@ class CallContactState extends State<CallContact> {
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
-                callContact(contact1.number, called);
                 if (!called) {
                   final snackBar = SnackBar(
                     content: const Text(
@@ -88,7 +87,6 @@ class CallContactState extends State<CallContact> {
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
-                callContact(contact2.number, called);
                 if (!called) {
                   final snackBar = SnackBar(
                     content: const Text(
@@ -116,7 +114,6 @@ class CallContactState extends State<CallContact> {
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
-                callContact(contact3.number, called);
 
                 if (!called) {
                   final snackBar = SnackBar(
