@@ -186,6 +186,7 @@ class Editor1State extends State<Editor1> {
                   if (number != null || number != "") {
                     contact1.setNumber(number!);
                   }
+                  contact1.save();
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: buttons, fixedSize: Size(180, 70)),

@@ -3,6 +3,7 @@ import 'package:safer/backend/contacts.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/manageContacts.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
 
 class Editor3 extends StatefulWidget {
@@ -11,8 +12,79 @@ class Editor3 extends StatefulWidget {
 }
 
 class Editor3State extends State<Editor3> {
-  String name = "";
-  String number = "";
+  String? name = "";
+  String? number = "";
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController numberController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    retrieveName();
+    retrieveNumber();
+  }
+
+//Methods for Name
+  Future<void> retrieveName() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    if (!prefs.containsKey('name')) {
+      return;
+    }
+
+    setState(() {
+      name = prefs.getString('name');
+    });
+  }
+
+  Future<void> saveName() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('name', nameController.text);
+  }
+
+  Future<void> clearName() async {
+    final prefs = await SharedPreferences.getInstance();
+    // Check where the name is saved before or not
+    if (!prefs.containsKey('name')) {
+      return;
+    }
+
+    await prefs.remove('name');
+    setState(() {
+      name = "";
+    });
+  }
+
+// Methods for Number
+  Future<void> retrieveNumber() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    if (!prefs.containsKey('number')) {
+      return;
+    }
+
+    setState(() {
+      number = prefs.getString('number');
+    });
+  }
+
+  Future<void> saveNumber() async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setString('number', numberController.text);
+  }
+
+  Future<void> clearNumber() async {
+    final prefs = await SharedPreferences.getInstance();
+    // Check where the name is saved before or not
+    if (!prefs.containsKey('number')) {
+      return;
+    }
+
+    await prefs.remove('number');
+    setState(() {
+      number = "";
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +125,7 @@ class Editor3State extends State<Editor3> {
         child: SingleChildScrollView(
           child: Column(children: [
             Text(
-              "Contact 2",
+              "Contact 3",
               style: TextStyle(fontSize: 40.0, color: title),
               textAlign: TextAlign.center,
             ),
@@ -61,10 +133,10 @@ class Editor3State extends State<Editor3> {
             SizedBox(
               width: 350,
               child: TextFormField(
-                controller: TextEditingController(),
+                controller: nameController,
                 onChanged: (String? value) {
                   if (value != null) {
-                    name = value;
+                    saveName();
                   }
                 },
                 style: TextStyle(color: Colors.white),
@@ -85,11 +157,9 @@ class Editor3State extends State<Editor3> {
             SizedBox(
               width: 350,
               child: TextFormField(
-                controller: TextEditingController(),
+                controller: numberController,
                 onChanged: (String? value) {
-                  if (value != null) {
-                    number = value;
-                  }
+                  saveNumber();
                 },
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
@@ -110,12 +180,13 @@ class Editor3State extends State<Editor3> {
             ElevatedButton.icon(
                 onPressed: () {
                   if (name != null || name != "") {
-                    contact3.setName(name);
+                    contact3.setName(name!);
                   }
 
                   if (number != null || number != "") {
-                    contact3.setNumber(number);
+                    contact3.setNumber(number!);
                   }
+                  contact3.save();
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: buttons, fixedSize: Size(180, 70)),
