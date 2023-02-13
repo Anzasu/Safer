@@ -1,5 +1,6 @@
 Walkthrouh Video:  
 https://youtu.be/r_c4O9-_jJQ
+(Submitted for the hackathon. App may change over time)
 
 # Inspiration
 The crime rate is still very high nowadays. Kidnappings, rapes, robberies, molestations, ...
