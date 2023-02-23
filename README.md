@@ -1,3 +1,7 @@
+Walkthrouh Video:  
+https://youtu.be/r_c4O9-_jJQ
+(Submitted for the hackathon. App may change over time)
+
 # Inspiration
 The crime rate is still very high nowadays. Kidnappings, rapes, robberies, molestations, ...
 Children and women, who often travel alone, are particularly often affected.
@@ -57,7 +61,8 @@ Especially how apps are programmed with Flutter, but also a lot about app design
 # What's next for Safer
 After implementing the method to save the contact data locally and adding the final touches, the app will hopefully enter the testing phase. With the help of the testers' feedback, possible bugs will be eliminated and the app will be made public for everyone.
 
-## Photos
+# Photos
+The app logo was made with the help of getimg-Art Generator. Here is a referral link: https://getimg.ai/ref/6CdSz7C3x
 ![icon_safer](https://user-images.githubusercontent.com/109875028/205458295-5ac5810d-a513-4d29-9dc9-b0bcf4d06e02.png)
 ![Hompage_initial](https://user-images.githubusercontent.com/109875028/205458312-ab8151ff-1ba9-4f55-89d8-3cd7589581e7.JPG)
 ![Emergency_Call_initial](https://user-images.githubusercontent.com/109875028/205458332-47d15936-6a62-4630-a0bb-89e97df5b4e9.JPG)
