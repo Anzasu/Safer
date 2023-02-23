@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:safer/backend/emergencyNumbers.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/settings.dart';

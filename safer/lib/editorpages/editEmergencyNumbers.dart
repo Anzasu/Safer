@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:safer/backend/emergencyNumbers.dart';
+import 'package:safer/backend/emergency.dart';
 import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/settings.dart';
@@ -143,7 +143,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                     }
 
                     if (firedepNr != null || firedepNr != "") {
-                      fire.setNumber(firedepNr);
+                      firedepartment.setNumber(firedepNr);
                     }
 
                     if (ambulanceNr != null || ambulanceNr != "") {

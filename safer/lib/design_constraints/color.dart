@@ -7,4 +7,4 @@ Color textOnDark = Color.fromARGB(255, 96, 116, 50);
 Color buttons =
     title; // added this attribute for an easier implementation later
 Color highlight = Color.fromARGB(255, 224, 255, 171);
-Color icons = Color.fromARGB(255, 184, 209, 118);
+Color icons = Color.fromARGB(255, 205, 231, 134);
