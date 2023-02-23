@@ -5,37 +5,39 @@ class EmergencyNumber {
   String number = "";
   String name = "";
 
-  EmergencyNumber(String name);
+  EmergencyNumber(this.name);
 
   void setNumber(String number) {
     number = number;
   }
 
   void loadDataFromFile() async {
-    var path = "userData/emergency.txt";
-    var data;
-    File(path)
-        .openRead()
-        .transform(utf8.decoder)
-        .transform(LineSplitter())
-        .forEach((line) => {
-              if (line.startsWith(this.name)) {data = line.split("-")}
-            });
+    try {
+      var file = File('${Directory.current.path}/userData/emergency.txt');
+      var contents = await file.readAsString();
+      var lines = LineSplitter().convert(contents);
 
-    if (data[1] == null || data[1] == "") {
-      number = "0000";
-    } else {
-      number = data[1];
+      for (var line in lines) {
+        if (line.startsWith(this.name)) {
+          var data = line.split("-");
+          this.number = data[1];
+          break;
+        }
+      }
+    } catch (e) {
+      print('Error reading emergency file: $e');
     }
   }
 
   void saveNewDataInFile() async {
-    var path = "userData/emergency.txt";
-    File(path).openWrite().write(police.toString() +
-        "\n" +
-        firedepartment.toString() +
-        "\n" +
-        ambulance.toString());
+    try {
+      var file = File('${Directory.current.path}/userData/emergency.txt');
+      var output =
+          "${police.toString()}\n${firedepartment.toString()}\n${ambulance.toString()}";
+      await file.writeAsString(output);
+    } catch (e) {
+      print('Error saving emergency file: $e');
+    }
   }
 
   String toString() {

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Contact {
@@ -9,14 +10,14 @@ class Contact {
   String number = "";
   int id = 0;
 
-  Contact(int i);
+  Contact(this.id);
 
   void setName(String name) {
     this.name = name;
   }
 
   void setNumber(String number) {
-    this.number;
+    this.number = number;
   }
 
   // void save() async {
@@ -29,38 +30,33 @@ class Contact {
   // }
 
   void loadDataFromFile() async {
-    var path = "userData/contact.txt";
-    var data;
-    File(path)
-        .openRead()
-        .transform(utf8.decoder)
-        .transform(LineSplitter())
-        .forEach((line) => {
-              if (line.substring(0, 0) == id.toString())
-                {data = line.substring(2).split('-')}
-            });
-    if (data[0] == null || data[0] == "") {
-      name = "contact" + id.toString();
-    } else {
-      name = data[0];
-    }
+    try {
+      var file = File('${Directory.current.path}/userData/contact.txt');
+      var contents = await file.readAsString();
+      var lines = LineSplitter().convert(contents);
 
-    if (data[1] == null || data[0] == "") {
-      number = "0000";
-    } else {
-      number = data[1];
+      for (var line in lines) {
+        if (line.startsWith(this.id.toString())) {
+          var data = line.substring(2).split('-');
+          this.name = data[0];
+          this.number = data[1];
+          break;
+        }
+      }
+    } catch (e) {
+      print('Error reading contact file: $e');
     }
   }
 
   void saveNewDataInFile() async {
-    var path = "userData/contact.txt";
-    File(path).openWrite().write(contact1.toString() +
-        "\n" +
-        contact2.toString() +
-        "\n" +
-        contact3.toString() +
-        "\n" +
-        contact4.toString());
+    try {
+      var file = File('${Directory.current.path}/userData/contact.txt');
+      var output =
+          "${contact1.toString()}\n${contact2.toString()}\n${contact3.toString()}\n${contact4.toString()}";
+      await file.writeAsString(output);
+    } catch (e) {
+      print('Error saving contact file: $e');
+    }
   }
 
   // void load() async {
