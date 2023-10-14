@@ -67,9 +67,9 @@ The app logo was made with the help of getimg-Art Generator. Here is a referral 
 ![Hompage_initial](https://user-images.githubusercontent.com/109875028/205458312-ab8151ff-1ba9-4f55-89d8-3cd7589581e7.JPG)
 ![Emergency_Call_initial](https://user-images.githubusercontent.com/109875028/205458332-47d15936-6a62-4630-a0bb-89e97df5b4e9.JPG)
 ![Call_Contact_initial](https://user-images.githubusercontent.com/109875028/205458341-3ebd0375-ab35-4e54-bb90-af4eccc9f9c9.JPG)
-![Settings_initial](https://user-images.git![Edit_Contact_initial](https://user-images.githubusercontent.com/109875028/205458350-33ca2e95-d825-4d8a-a002-cd37b8671b08.JPG)
-hubusercontent.com/109875028![Edit_Emergency_initial](https://user-images.githubusercontent.com/109875028/205458352-30d514c1-6c9b-47b8-9d17-90815fa64a4b.JPG)
-/205458325-a9141f56-0b42-4875-9644-e45a26b0245d.JPG)
+![Settings_initial](https://user-images.githubusercontent.com/109875028/205458325-a9141f56-0b42-4875-9644-e45a26b0245d.JPG)
+![Edit_Emergency_initial](https://user-images.githubusercontent.com/109875028/205458352-30d514c1-6c9b-47b8-9d17-90815fa64a4b.JPG)
+![Edit_Contact_initial](https://user-images.githubusercontent.com/109875028/205458350-33ca2e95-d825-4d8a-a002-cd37b8671b08.JPG)
 
 
 
