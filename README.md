@@ -20,10 +20,10 @@ To call a contact, first set up to 4 numbers in the settings that belong to peop
 To make an emergency call, you must first set up the emergency numbers in the settings. Since each country has its own numbers, each user has to set them up individually.
 
 If you choose to send your location, you have the option to send your coordinates to all saved contacts via SMS as soon as you click on the button. Since the app is meant to be available to everyone, I didn't choose to send via WhatsApp or any other messenger because:
-1. not everyone always has access to the internet when they are away from home and.
-2. not everyone uses the same messenger. But everyone already has the SMS messenger built in.
+1. not everyone always has access to the internet when they are away from home
+2. not everyone uses the same messenger. But everyone already has the SMS messenger built in
 
-#Design
+# Design
 Before I started with the implementation, I first planned the UI.
 
 Since this is a project for the track social justice, I had to make sure that as many people as possible are able to use the app comfortably
@@ -32,7 +32,7 @@ In general, I kept the design very simple. This ensures that the user, even in s
 I will also attach some photos of the planning so that it conveys the idea better.
 The app logo was created with the Stable Diffusion AI.
 
-##Color palette
+## Color palette
 I chose a warm dark green as the color base and and created a palette through lighter gradations. 
 Green is considered calming. For an app that is probably only opened in stressful situations, gaudy colors like red and yellow would only be counterproductive.
 
@@ -55,7 +55,7 @@ However, already having advanced experience in OOP and Java helped me a lot.
 Forced some problems with importing packages into flutter, I was not able to implement the function to call and send SMS (SOLVED). When clicking on the corresponding buttons, it is not possible to make a call or send the location (SOLVED).
 Instead, a snack bar appears with a corresponding error message.
 
-#What we learned
+# What I learned
 Especially how apps are programmed with Flutter, but also a lot about app design and the many aspects that have to be considered (colour, font style, font size, etc.).
 
 # What's next for Safer
