@@ -21,42 +21,42 @@ class EmergencyCallState extends State<EmergencyCall> {
         openForegroundColor: highlight,
         closedBackgroundColor: buttons,
         openBackgroundColor: background,
-        child: Icon(Icons.menu, size: 35.0),
         speedDialChildren: <SpeedDialChild>[
           SpeedDialChild(
-            child: Icon(Icons.home, size: 35.0),
+            child: const Icon(Icons.home, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
               );
             },
           ),
           SpeedDialChild(
-            child: Icon(Icons.settings, size: 35.0),
+            child: const Icon(Icons.settings, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Settings()),
+                MaterialPageRoute(builder: (context) => const Settings()),
               );
             },
           ),
         ],
+        child: const Icon(Icons.menu, size: 35.0),
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Text(
               "Make An Emergency Call",
               style: TextStyle(color: title, fontSize: 37),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             ElevatedButton.icon(
               onPressed: () {
                 final snackBar = SnackBar(
@@ -78,9 +78,9 @@ class EmergencyCallState extends State<EmergencyCall> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             ElevatedButton.icon(
               onPressed: () {
                 final snackBar = SnackBar(
@@ -102,9 +102,9 @@ class EmergencyCallState extends State<EmergencyCall> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             ElevatedButton.icon(
               onPressed: () {
                 final snackBar = SnackBar(
@@ -126,7 +126,7 @@ class EmergencyCallState extends State<EmergencyCall> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
           ],
         ),

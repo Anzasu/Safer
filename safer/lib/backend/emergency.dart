@@ -15,12 +15,12 @@ class EmergencyNumber {
     try {
       var file = File('${Directory.current.path}/userData/emergency.txt');
       var contents = await file.readAsString();
-      var lines = LineSplitter().convert(contents);
+      var lines = const LineSplitter().convert(contents);
 
       for (var line in lines) {
-        if (line.startsWith(this.name)) {
+        if (line.startsWith(name)) {
           var data = line.split("-");
-          this.number = data[1];
+          number = data[1];
           break;
         }
       }
@@ -40,11 +40,12 @@ class EmergencyNumber {
     }
   }
 
+  @override
   String toString() {
-    return name + "-" + number;
+    return "$name-$number";
   }
 }
 
-EmergencyNumber police = new EmergencyNumber("Police");
-EmergencyNumber firedepartment = new EmergencyNumber("Firedepartment");
-EmergencyNumber ambulance = new EmergencyNumber("Ambulance");
+EmergencyNumber police = EmergencyNumber("Police");
+EmergencyNumber firedepartment = EmergencyNumber("Firedepartment");
+EmergencyNumber ambulance = EmergencyNumber("Ambulance");

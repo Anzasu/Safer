@@ -6,6 +6,8 @@ import 'package:safer/design_constraints/color.dart';
 import 'package:safer/mainpages/home.dart';
 
 class SendLocation extends StatefulWidget {
+  const SendLocation({super.key});
+
   @override
   State<StatefulWidget> createState() => SendLocationState();
 }
@@ -31,20 +33,20 @@ class SendLocationState extends State<SendLocation> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MyHomePage()),
+            MaterialPageRoute(builder: (context) => const MyHomePage()),
           );
         },
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Text(
               "Send location",
               style: TextStyle(color: textOnDark, fontSize: 40.0),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 250,
               child: CheckboxListTile(
@@ -72,7 +74,7 @@ class SendLocationState extends State<SendLocation> {
                 },
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 250,
               child: CheckboxListTile(
@@ -100,7 +102,7 @@ class SendLocationState extends State<SendLocation> {
                 },
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 250,
               child: CheckboxListTile(
@@ -128,7 +130,7 @@ class SendLocationState extends State<SendLocation> {
                 },
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 250,
               child: CheckboxListTile(
@@ -156,13 +158,13 @@ class SendLocationState extends State<SendLocation> {
                 },
               ),
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             ElevatedButton.icon(
               icon: Icon(Icons.send_rounded, size: 55.0, color: icons),
               label: Text("Send",
                   style: TextStyle(fontSize: 35.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(200, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(200, 100)),
               onPressed: () {
                 bool success = false;
                 bool gotIt = false;
@@ -174,7 +176,7 @@ class SendLocationState extends State<SendLocation> {
                   // ignore: dead_code
                   if (success) {
                     final snackBar = SnackBar(
-                      content: Text("Sucessfully sent"),
+                      content: const Text("Sucessfully sent"),
                       backgroundColor: (background),
                       action: SnackBarAction(
                         label: "dismiss",

@@ -23,42 +23,42 @@ class CallContactState extends State<CallContact> {
         openForegroundColor: highlight,
         closedBackgroundColor: buttons,
         openBackgroundColor: background,
-        child: Icon(Icons.menu, size: 35.0),
         speedDialChildren: <SpeedDialChild>[
           SpeedDialChild(
-            child: Icon(Icons.home, size: 35.0),
+            child: const Icon(Icons.home, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
               );
             },
           ),
           SpeedDialChild(
-            child: Icon(Icons.settings, size: 35.0),
+            child: const Icon(Icons.settings, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Settings()),
+                MaterialPageRoute(builder: (context) => const Settings()),
               );
             },
           ),
         ],
+        child: const Icon(Icons.menu, size: 35.0),
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Text(
               "Call A Contact",
               style: TextStyle(color: title, fontSize: 40),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
@@ -81,9 +81,9 @@ class CallContactState extends State<CallContact> {
               label: Text(contact1.name,
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
@@ -108,9 +108,9 @@ class CallContactState extends State<CallContact> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
@@ -136,9 +136,9 @@ class CallContactState extends State<CallContact> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 bool called = false;
@@ -164,7 +164,7 @@ class CallContactState extends State<CallContact> {
                 style: TextStyle(fontSize: 30.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
           ],
         ),

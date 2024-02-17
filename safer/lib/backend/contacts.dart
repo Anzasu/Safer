@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Contact {
   String name = "";
@@ -33,13 +30,13 @@ class Contact {
     try {
       var file = File('${Directory.current.path}/userData/contact.txt');
       var contents = await file.readAsString();
-      var lines = LineSplitter().convert(contents);
+      var lines = const LineSplitter().convert(contents);
 
       for (var line in lines) {
-        if (line.startsWith(this.id.toString())) {
+        if (line.startsWith(id.toString())) {
           var data = line.substring(2).split('-');
-          this.name = data[0];
-          this.number = data[1];
+          name = data[0];
+          number = data[1];
           break;
         }
       }
@@ -70,12 +67,12 @@ class Contact {
 
   @override
   String toString() {
-    String output = id.toString() + " " + name + "-" + number;
+    String output = "$id $name-$number";
     return output;
   }
 }
 
-Contact contact1 = new Contact(1);
-Contact contact2 = new Contact(2);
-Contact contact3 = new Contact(3);
-Contact contact4 = new Contact(4);
+Contact contact1 = Contact(1);
+Contact contact2 = Contact(2);
+Contact contact3 = Contact(3);
+Contact contact4 = Contact(4);

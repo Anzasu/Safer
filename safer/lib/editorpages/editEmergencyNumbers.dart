@@ -6,6 +6,8 @@ import 'package:safer/mainpages/settings.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
 
 class EditorEmergency extends StatefulWidget {
+  const EditorEmergency({super.key});
+
   @override
   State<EditorEmergency> createState() => EditorEmergencyState();
 }
@@ -24,43 +26,43 @@ class EditorEmergencyState extends State<EditorEmergency> {
         openForegroundColor: highlight,
         closedBackgroundColor: buttons,
         openBackgroundColor: background,
-        child: Icon(Icons.menu, size: 35.0),
         speedDialChildren: <SpeedDialChild>[
           SpeedDialChild(
-            child: Icon(Icons.home, size: 35.0),
+            child: const Icon(Icons.home, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
               );
             },
           ),
           SpeedDialChild(
-            child: Icon(Icons.settings, size: 35.0),
+            child: const Icon(Icons.settings, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Settings()),
+                MaterialPageRoute(builder: (context) => const Settings()),
               );
             },
           ),
         ],
+        child: const Icon(Icons.menu, size: 35.0),
       ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Text(
                 "Manage Emergency Numbers",
                 style: TextStyle(fontSize: 40.0, color: title),
                 textAlign: TextAlign.center,
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               SizedBox(
                 width: 350,
                 child: TextFormField(
@@ -70,7 +72,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                       policeNr = value;
                     }
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: buttons,
@@ -85,7 +87,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                   keyboardType: TextInputType.phone,
                 ),
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               SizedBox(
                 width: 350,
                 child: TextFormField(
@@ -95,7 +97,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                       firedepNr = value;
                     }
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: buttons,
@@ -110,7 +112,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                   keyboardType: TextInputType.phone,
                 ),
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               SizedBox(
                 width: 350,
                 child: TextFormField(
@@ -120,7 +122,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                       ambulanceNr = value;
                     }
                   },
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: buttons,
@@ -135,7 +137,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                   keyboardType: TextInputType.phone,
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               ElevatedButton.icon(
                   onPressed: () {
                     if (policeNr != null || policeNr != "") {
@@ -151,7 +153,7 @@ class EditorEmergencyState extends State<EditorEmergency> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: buttons, fixedSize: Size(180, 70)),
+                      backgroundColor: buttons, fixedSize: const Size(180, 70)),
                   icon: Icon(
                     Icons.save,
                     color: highlight,

@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:simple_speed_dial/simple_speed_dial.dart';
 
 class Editor4 extends StatefulWidget {
+  const Editor4({super.key});
+
   @override
   State<Editor4> createState() => Editor4State();
 }
@@ -95,31 +97,31 @@ class Editor4State extends State<Editor4> {
         openForegroundColor: highlight,
         closedBackgroundColor: buttons,
         openBackgroundColor: background,
-        child: Icon(Icons.menu, size: 35.0),
         speedDialChildren: <SpeedDialChild>[
           SpeedDialChild(
-            child: Icon(Icons.home, size: 35.0),
+            child: const Icon(Icons.home, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MyHomePage()),
+                MaterialPageRoute(builder: (context) => const MyHomePage()),
               );
             },
           ),
           SpeedDialChild(
-            child: Icon(Icons.arrow_back, size: 35.0),
+            child: const Icon(Icons.arrow_back, size: 35.0),
             foregroundColor: highlight,
             backgroundColor: buttons,
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Contactmanager()),
+                MaterialPageRoute(builder: (context) => const Contactmanager()),
               );
             },
           ),
         ],
+        child: const Icon(Icons.menu, size: 35.0),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -129,7 +131,7 @@ class Editor4State extends State<Editor4> {
               style: TextStyle(fontSize: 40.0, color: title),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             SizedBox(
               width: 350,
               child: TextFormField(
@@ -139,7 +141,7 @@ class Editor4State extends State<Editor4> {
                     saveName();
                   }
                 },
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: buttons,
@@ -153,7 +155,7 @@ class Editor4State extends State<Editor4> {
                 cursorColor: Colors.white,
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             SizedBox(
               width: 350,
               child: TextFormField(
@@ -161,7 +163,7 @@ class Editor4State extends State<Editor4> {
                 onChanged: (String? value) {
                   saveNumber();
                 },
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                     filled: true,
                     fillColor: buttons,
@@ -176,7 +178,7 @@ class Editor4State extends State<Editor4> {
                 keyboardType: TextInputType.phone,
               ),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
                 onPressed: () {
                   if (name != null || name != "") {
@@ -189,7 +191,7 @@ class Editor4State extends State<Editor4> {
                   contact4.saveNewDataInFile();
                 },
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: buttons, fixedSize: Size(180, 70)),
+                    backgroundColor: buttons, fixedSize: const Size(180, 70)),
                 icon: Icon(
                   Icons.save,
                   color: highlight,

@@ -5,6 +5,8 @@ import 'package:safer/mainpages/home.dart';
 import 'package:safer/mainpages/manageContacts.dart';
 
 class Settings extends StatelessWidget {
+  const Settings({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,39 +21,39 @@ class Settings extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => MyHomePage()),
+            MaterialPageRoute(builder: (context) => const MyHomePage()),
           );
         },
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 60),
+            const SizedBox(height: 60),
             Text(
               "Settings",
               style: TextStyle(color: title, fontSize: 40),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 150),
+            const SizedBox(height: 150),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Contactmanager()),
+                  MaterialPageRoute(builder: (context) => const Contactmanager()),
                 );
               },
               icon: Icon(Icons.group_add_outlined, size: 55.0, color: icons),
               label: Text("Manage Contacts",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 85),
+            const SizedBox(height: 85),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => EditorEmergency()),
+                  MaterialPageRoute(builder: (context) => const EditorEmergency()),
                 );
               },
               icon: Icon(Icons.add_call, size: 55.0, color: icons),
@@ -60,7 +62,7 @@ class Settings extends StatelessWidget {
                 style: TextStyle(fontSize: 25.0, color: textOnLight),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
           ],
         ),

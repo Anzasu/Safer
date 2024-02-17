@@ -6,6 +6,8 @@ import 'package:safer/mainpages/sendLocation.dart';
 import 'package:safer/mainpages/settings.dart';
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,58 +15,58 @@ class MyHomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: buttons,
         foregroundColor: icons,
-        child: Icon(
+        child: const Icon(
           Icons.settings,
           size: 35.0,
         ),
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Settings()),
+            MaterialPageRoute(builder: (context) => const Settings()),
           );
         },
       ),
       body: Center(
         child: Column(
           children: [
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             Text(
               "What do you need?",
               style: TextStyle(color: title, fontSize: 40),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Text(
               "Make sure your GPS is enabled.",
               style: TextStyle(fontSize: 30.0, color: icons),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               "Please set up the numbers in the settings.",
               style: TextStyle(fontSize: 25.0, color: highlight),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 45),
+            const SizedBox(height: 45),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => EmergencyCall()),
+                  MaterialPageRoute(builder: (context) => const EmergencyCall()),
                 );
               },
               icon: Icon(Icons.phone_forwarded, size: 55.0, color: icons),
               label: Text("Emergency Call",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SendLocation()),
+                  MaterialPageRoute(builder: (context) => const SendLocation()),
                 );
               },
               icon: Icon(Icons.emergency_share_outlined,
@@ -72,14 +74,14 @@ class MyHomePage extends StatelessWidget {
               label: Text("Send Location",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton.icon(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CallContact()),
+                  MaterialPageRoute(builder: (context) => const CallContact()),
                 );
               },
               icon: Icon(Icons.quick_contacts_dialer_rounded,
@@ -87,7 +89,7 @@ class MyHomePage extends StatelessWidget {
               label: Text("Call Contact",
                   style: TextStyle(fontSize: 30.0, color: textOnLight)),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: buttons, fixedSize: Size(250, 100)),
+                  backgroundColor: buttons, fixedSize: const Size(250, 100)),
             ),
           ],
         ),
