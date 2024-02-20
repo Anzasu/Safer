@@ -5,20 +5,20 @@
  "version": "0.2.0",
  "configurations": [
   {
-   "name": "safer",
+   "name": "Safer",
    "cwd": "safer",
    "request": "launch",
    "type": "dart"
   },
   {
-   "name": "safer (profile mode)",
+   "name": "Safer (profile mode)",
    "cwd": "safer",
    "request": "launch",
    "type": "dart",
    "flutterMode": "profile"
   },
   {
-   "name": "safer (release mode)",
+   "name": "Safer (release mode)",
    "cwd": "safer",
    "request": "launch",
    "type": "dart",
